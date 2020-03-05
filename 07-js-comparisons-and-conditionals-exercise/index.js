@@ -7,6 +7,7 @@ const passwordConfirmation = "JSisCool888";
 const sortOrder = "ALPHABETICAL";
 
 // ADD YOUR CODE BELOW
+
 const targetMatchesCoercedUserValue = target == userValue;
 const targetMatchesUserValue = target === userValue;
 
