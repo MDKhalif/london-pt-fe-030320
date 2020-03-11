@@ -99,5 +99,4 @@ goOut();
 
 getHome();
 
-goOut();
-```
+goOu
