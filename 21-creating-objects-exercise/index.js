@@ -7,6 +7,15 @@
  * PS: use console.log() to see the result
  */
 
+const user = {
+
+    firstName: "Mohammed",
+    lastName: "Khalif",
+    age: 34
+};
+
+console.log(user);
+
 /**
  * Exercise 2
  *
@@ -15,6 +24,24 @@
  *
  * PS: use console.log() to see the result
  */
+
+const allTypes = {
+    string: "Test",
+    number: 7,
+    array: [1, 3, 5, 7, 9],
+   
+    object: {
+        name: "nested"
+    },
+    
+    function test () {
+
+    },
+    boolean: true
+
+};
+
+console.log(allTypes);
 
 /**
  * Exercise 3
