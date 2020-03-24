@@ -29,6 +29,10 @@ const user = {
  * PS: use console.log() to see the result
  */
 
+const userFirstName = user.firstName;
+console.log(userFirstName);
+
+
 /**
  * Exercise 2
  *
@@ -39,6 +43,9 @@ const user = {
  * PS: use console.log() to see the result
  */
 
+const favoriteMovie = user.favoriteMovies[0];
+console.log(favoriteMovie);
+
 /**
  * Exercise 3
  * create "userFullName" that equals to
@@ -47,6 +54,11 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
+
+
+const userFullName = user.firstName + " " + user.lastName;
+console.log(userFullName);
+
 
 /**
  * Exercise 4
@@ -57,6 +69,13 @@ const user = {
  * PS: use console.log() to see the result
  */
 
+function getFullName() {
+return user.firstName + " " + user.lastName;
+}
+
+console.log(getFullName);
+
+
 /**
  * Exercise 5
  *
@@ -66,7 +85,11 @@ const user = {
  * PS: use console.log() to see the result
  */
 
-/**
+
+const mothersFirstName = user.parents.mother.firstName;
+console.log(mothersFirstName);
+
+ /**
  * Exercise 6
  *
  * create a function "getParentFullName"
@@ -76,6 +99,13 @@ const user = {
  * PS: use console.log() to see the result
  */
 
+function getParentFullName(parentType) {
+
+return `${user.parents[parentType].firstName} ${user.parents[parentType].lastName}`
+
+};
+	
+
 /**
  * Exercise 7
  *
@@ -84,3 +114,13 @@ const user = {
  *
  * * PS: use console.log() to see the result
  */
+
+function getUserData(prop) {
+	if(user[prop]) {
+		return user[prop];
+	}
+	else {
+		return "prop name doesn't exist";
+	}
+	
+}
