@@ -34,7 +34,7 @@ const allTypes = {
         name: "nested"
     },
     
-    function test () {
+    test () {
 
     },
     boolean: true
@@ -52,3 +52,16 @@ console.log(allTypes);
  *
  * PS: use console.log() to see the result
  */
+
+ function createMovieObject (name, rating, ticketPrice) {
+ movie = {
+    name: "Home Alone",
+    rating: 8.5,
+    ticketPrice: 20
+    }
+    
+    return movie
+ };
+
+ 
+ console.log(createMovieObject);
