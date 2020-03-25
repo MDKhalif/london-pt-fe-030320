@@ -1,6 +1,6 @@
-const myName = "John"; // SET YOUR NAME
+const myName = "Mohammed"; // SET YOUR NAME
 
-const visitors = ["Alex", "Mike", "Sam"]; // Add at least 5 names
+const visitors = ["Alex", "Mike", "Sam", "Lisa", "Gemma"]; // Add at least 5 names
 
 /**
  * Exercise 1
@@ -9,6 +9,17 @@ const visitors = ["Alex", "Mike", "Sam"]; // Add at least 5 names
  * will greet all people from "visitors" for each person you should
  * console.log "Hi {name}, my name is {myName}!"
  */
+
+function greetVisitors () {
+
+for (let index = 0; index < visitors.length; index++) {
+    
+    //const name = visitors[index];
+    visitors.forEach(element => console.log(`Hi {name}, my name is {myName}!`));
+}};
+
+greetVisitors();
+
 
 // ========================
 const numbers = [2, 123, 13, 1, 6, 84, 23, 12, 45]; // DON'T TOUCH THIS LINE :)
