@@ -5,9 +5,9 @@
  * "Property name: {propertyName}"
  */
 
-function logProperties(obj) {
-    for(let key in obj) {
-        console.log(key)
+function logProperties( object ) {
+    for( const key in object ) {
+        console.log( `${key}` );
     }
 }
 
@@ -18,14 +18,13 @@ function logProperties(obj) {
  */
 
 
-function getAllValues(obj) {
-    const values = [];
-    for(let key in obj) {
-        values.push(obj[key])
+function getAllValues( object ) {
+    let newArray = [];
+    for( const key in object ) {
+        newArray.push( object[key] )
     }
-    return values;
+    return newArray;
 }
-
 
 /**
  * Exercise 3
@@ -33,15 +32,14 @@ function getAllValues(obj) {
  * and returns all values as one string with space separation.
  */
 
-function getAllValuesAsString(obj) {
-    const values = [];
-    for(let key in obj) {
-        values.push(obj[key])
+function getAllValuesAsString( object ) {
+    let string = '';
+    for( const key in object ) {
+        string += `${object[key]} `;
     }
-    
-    return values.join(' ');
+    string = string.trim();
+    return string;
 }
-
 
 /**
  * Exercise 4
