@@ -7,6 +7,11 @@
  * should be 'incognito'
  */
 
+ function sayHi(name = "incognito") {
+    return `Hi, ${name}!`
+ };
+
+
 /**
  * Exercise 2
  * 
@@ -17,6 +22,14 @@
  * a default value/values
  */
 
+function multiply(number1 = 1, number2 = 1){
+    const result = number1 * number2
+    return result
+};
+
+multiply();
+
+
 /**
  * Exercise 3
  * create a function {logElements} that takes array as a param
@@ -25,6 +38,13 @@
  * array that contains only one element - string with value "Nothing to log"
  */
 
+ function logElements(array = ['Nothing to log']){
+    array.forEach(element => console.log(element));
+    }
+
+ logElements(["John", "Alan", "Simon"]);
+ 
+
 /**
  * Exercise 4
  * create a function {getUserName} that takes object with property
@@ -32,3 +52,7 @@
  * Default value of the param should be object with property name,
  * and value "John Smith"
  */
+
+function getUserName(obj = {name : "John Smith"}) {
+    return obj.name
+}
