@@ -10,6 +10,8 @@
  * a new array.
  */
 
+ 
+
 /**
  * Exercise 2
  *
