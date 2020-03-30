@@ -62,7 +62,7 @@ const number2 = readlineSync.questionInt("Please provide second number?");
  * show the result to the user
  */
 
-const result = eval(`${number1}${selectedSymbol}${number2}`);
+const result = eval(number1 + selectedSymbol + number2);
 
 console.log("=====================");
 console.log(`Here you go, the result is ${result}`);
