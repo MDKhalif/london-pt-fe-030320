@@ -27,19 +27,19 @@ const friends = ["Rachel", "Ross", "Chandler", "Monica", "Joey", "Phoebe"];
 
 function chooseAFriend() {
   console.log("Here are the friends");
-  friends.forEach((friend, index) => {
-    console.log(`${index + 1}: ${friend}`);
+  friends.forEach((friend, index) => { // Uses forEach and index to show each friend
+    console.log(`${index + 1}: ${friend}`); // index add one to shown friend name
   });
 
-  const choice = readlinesync.question("Make your choice");
-  const choiceAsNumber = parseInt(choice);
-  const chosenFriend = friends[choiceAsNumber - 1];
+  const choice = readlinesync.question("Make your choice"); // Make your choice and take in
+  const choiceAsNumber = parseInt(choice); // change the input string to number
+  const chosenFriend = friends[choiceAsNumber - 1]; // chosen number changed to -1 due to array positioning
 
-  if (chosenFriend !== undefined) {
-    console.log(`You chose ${chosenFriend}!`);
+  if (chosenFriend !== undefined) { // if chosen friend is NOT undefined
+    console.log(`You chose ${chosenFriend}!`); // show you have chosen and friend name
   } else {
-    console.log("That is not a valid choice");
-    chooseAFriend();
+    console.log("That is not a valid choice"); // otherwise if underfined - this is not a valid choice
+    chooseAFriend(); // and show the list of friends again, execute earlier function
   }
 }
 ```

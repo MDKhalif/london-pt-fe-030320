@@ -1,5 +1,7 @@
 // install and  import "readline-sync" npm package before you do exercises
 
+const readlineSync = require('readline-sync');
+
 let selectedItems = {
 	book: "",
 	movie: "",
@@ -36,6 +38,7 @@ const countries = [
 	"Netherland"
 ];
 
+
 /**
  * Exercise 1
  *
@@ -45,6 +48,25 @@ const countries = [
  *
  * NOTE: You need to add option to go back, to main menu
  */
+
+function chooseAbook() {
+	console.log("Here are the books");
+	books.forEach((book, index) => { 
+	  console.log(`${index + 1}: ${book}`); 
+	});
+  
+	const choice = readlinesync.question("Make your choice"); 
+	const choiceAsNumber = parseInt(choice); 
+	user.book = books[choiceAsNumber - 1]; 
+	
+	if (user.book !== undefined) { 
+		console.log(`You chose ${user.book}!`); 
+	  } else {
+		console.log("That is not a valid choice"); 
+		chooseAbook(); 
+	  }
+
+}
 
 /**
  * Exercise 2
@@ -56,6 +78,26 @@ const countries = [
  * NOTE: You need to add option to "go back", to main menu
  */
 
+
+function chooseAMovie() {
+	console.log("Here are the movies");
+	movies.forEach((movie, index) => { 
+	  console.log(`${index + 1}: ${movie}`); 
+	});
+  
+	const choice = readlinesync.question("Make your choice"); 
+	const choiceAsNumber = parseInt(choice); 
+	user.movie = movies[choiceAsNumber - 1]; 
+	
+	if (user.movie !== undefined) { 
+		console.log(`You chose ${user.movie}!`); 
+	  } else {
+		console.log("That is not a valid choice"); 
+		chooseAMovie(); 
+	  }
+
+}
+
 /**
  * Exercise 3
  *
@@ -66,6 +108,25 @@ const countries = [
  * NOTE: You need to add option to go back, to main menu
  */
 
+function chooseAdestination() {
+	console.log("Here are the destinations");
+	countries.forEach((destination, index) => { 
+	  console.log(`${index + 1}: ${destination}`); 
+	});
+  
+	const choice = readlinesync.question("Make your choice"); 
+	const choiceAsNumber = parseInt(choice); 
+	user.nextTrip = countries[choiceAsNumber - 1]; 
+	
+	if (user.nextTrip !== undefined) { 
+		console.log(`You chose ${user.nextTrip}!`); 
+	  } else {
+		console.log("That is not a valid choice"); 
+		chooseAdestination(); 
+	  }
+
+}
+
 /**
  * Exercise 4
  *
@@ -73,3 +134,27 @@ const countries = [
  * so user can pick one. User also should have the option "Exit".
  * When the user pick "Exit", log selected items.
  */
+
+ const topMenu = ["Books", "Movies", "Next destination"];
+
+ function chooseMenu() {
+	console.log("Here are the menu options");
+	topMenu.forEach((option, index) => { 
+	  console.log(`${index + 1}: ${option}`); 
+	});
+  
+	const choice = readlinesync.question("Make your choice"); 
+	const choiceAsNumber = parseInt(choice); 
+	const chosenoption = topMenu[choiceAsNumber - 1]; 
+	
+	if (chosenoption === 0) { 
+		chooseAbook(); 
+	  } else if (chosenoption === 1) {
+		chooseAMovie(); 	
+		} else if (chosenoption === 2) {
+		chooseAdestination(); 
+	  } else {
+		console.log("That is not a valid choice"); 
+		chooseMenu();
+	  }
+}
