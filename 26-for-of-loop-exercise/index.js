@@ -11,17 +11,6 @@
  * empty array.
  */
 
-function getIntegersOnly(takeArray) {
-    let getArray = [];
-
-    for (const item of takeArray){ 
-        if (Number.isInteger(item)) { 
-            getArray.push(item);       
-        }
-    }
-    return getArray;
-
-}
 
 /**
  * Exercise 2
@@ -29,19 +18,6 @@ function getIntegersOnly(takeArray) {
  * and returns a new array with even numbers only, if there is no even
  * integers it should return an empty array
  */
-
-function getEvenNumbers(evenNumbers) {
-
-    let newArray = [];
-
-    for (const item of evenNumbers) {
-        if (item != 0 && item % 2 === 0) {
-            newArray.push(item);
-    }
-}
-
-    return newArray;
-}
 
 
 
@@ -55,19 +31,6 @@ function getEvenNumbers(evenNumbers) {
  * should return an empty array
  */
 
-function getEvenNumbersFromMixedArray(mixedArrays){
-
-    let newArray = [];
-
-    for (const item of mixedArrays) {
-        if(Number.isInteger(item) && item % 2 === 0){
-            newArray.push(item);
-        }        
-    }
-    return newArray;
-}
-
-
 
 
  /**
@@ -76,18 +39,6 @@ function getEvenNumbersFromMixedArray(mixedArrays){
  * and returns a new array with odd numbers only, if there is no odd
  * integers it should return an empty array
  */
-
-function getOddNumbers(oddNumbers) {
-    
-    let newArray = [];
-
-    for (const item of oddNumbers) {
-        if(item % 2 != 0){
-            newArray.push(item);
-        }        
-    }
-    return newArray;     
- }
 
 
 
@@ -100,19 +51,3 @@ function getOddNumbers(oddNumbers) {
  * If your param is [1,2,3,4,5] the result should be
  * [2,1,4,3,6]
  */
-
-function evenOddTransform(transformNumbers) {
-    let newArray = [];
-
-    for (let item of transformNumbers) { 
-        if (item % 2 === 1){
-            item = item+1; 
-            newArray.push(item);
-
-        } else if (item != 0 && item % 2 === 0) { 
-            item = item-1;
-            newArray.push(item); 
-    }
- }
- return newArray;
-}
