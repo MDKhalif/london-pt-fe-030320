@@ -26,6 +26,7 @@
  * use {forEachCallback} as a callback function for forEach
  */
 
+ 
 forEachCallback = element => {
     console.log(element);
   };
@@ -33,6 +34,7 @@ forEachCallback = element => {
   logAllWithExternalCallback = arr => {
     arr.forEach(forEachCallback);
   };
+
 
 /* =========================== */
 /* anonymous callbacks version */
@@ -45,10 +47,12 @@ forEachCallback = element => {
  */
 
 logAllWithAnonymousCallback = arr => {
-    arr.forEach(arrItem => {
-      console.log(arrItem);
+    arr.forEach(element => {
+        console.log(element);
     });
   };
+
+
 
 /**
  * Exercise 2
@@ -56,22 +60,26 @@ logAllWithAnonymousCallback = arr => {
  * module 3
  *
  * create a arrow function {dividableBy3} that takes an array
- * of numbers as a param. With forEach, filter it and return a new
- * filtered array what will contain only numbers that dividable by 3
- * without remainder
+ * of numbers as a param. 
+ * 
+ * With forEach, filter it and return a new filtered array which 
+ * will contain only numbers that dividable by 3 without remainder
  *
  * Ex: dividableBy3([3,7,9,11]) => return [3,9]
  */
 
-dividableBy3 = numbers => {
-    let filterNumbers = [];
-    numbers.forEach(number => {
-      if (number % 3 == 0) {
-        filterNumbers.push(number);
-      }
-    });
-    return filterNumbers;
-  };
+dividableBy3 = arr => {
+   newarr = []; 
+    
+    arr.forEach(element => {
+        if (element % 3 == 0){
+            newarr.push(element)
+        }
+    })
+    
+    return newarr;
+}
+
 
 /**
  * Exercise 3
@@ -81,15 +89,18 @@ dividableBy3 = numbers => {
  * Use forEach to loop through the array.
  */
 
-oddNumbersSum = numbers => {
-    let sum = 0;
-    numbers.forEach(number => {
-      if (number % 2 == 1) {
-        sum += number;
-      }
-    });
-    return sum;
-  };
+oddNumbersSum = arr => {
+    newarr = [];
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    arr.forEach(element => {
+        if (element % 2 !== 0) {
+            newarr.push(element);
+        }
+    })
+    const total = newarr.reduce(reducer);
+    return total;
+}
 
 /**
  * Exercise 4
@@ -102,12 +113,14 @@ oddNumbersSum = numbers => {
  * Ex: ["cat", 5, "dog"] => 6
  */
 
-totalLength = mixArr => {
-    let totalLength = 0;
-    mixArr.forEach(element => {
-      if (typeof element == "string") {
-        totalLength += element.length;
-      }
-    });
-    return totalLength;
-  };
+totalLength = arr => {
+    newarr = [];
+
+    arr.forEach(element => {
+        if (typeof element  === 'string') {
+            newarr.push(element);
+        }
+    })
+    const total = newarr.join('');
+    return total.length;
+ }

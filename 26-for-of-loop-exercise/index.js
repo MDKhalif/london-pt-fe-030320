@@ -11,6 +11,16 @@
  * empty array.
  */
 
+ function getIntegersOnly(param){
+    const Array = [];
+    
+    for (const element of param){
+         if (Number.isInteger(element)){
+             Array.push(element);
+         } 
+     }
+     return Array;
+ }
 
 /**
  * Exercise 2
@@ -19,6 +29,18 @@
  * integers it should return an empty array
  */
 
+function getEvenNumbers(param) {
+const Array = [];
+    for (const element of param) {
+        
+
+        if (element % 2 == 0 && Number.isInteger(element)) {
+            Array.push(element);   
+        }  
+        
+    }
+    return Array;
+}
 
 
 
@@ -31,6 +53,24 @@
  * should return an empty array
  */
 
+//["kitten", 34, "puppy", 12, "24", 64, 1, 5, 2, 8, "panda"]
+//[34, 12, 64, 2, 8]
+
+function getEvenNumbersFromMixedArray(param){
+
+    const Array = [];
+    for (const element of param) {
+        
+
+        if (element % 2 == 0 && Number.isInteger(element)) {
+            Array.push(element);   
+        }  
+        
+    }
+    return Array;
+
+}
+
 
 
  /**
@@ -40,6 +80,18 @@
  * integers it should return an empty array
  */
 
+function getOddNumbers(param) {
+    const Array = [];
+        for (const element of param) {
+            
+    
+            if (element % 2 !== 0 && Number.isInteger(element)) {
+                Array.push(element);   
+            }  
+            
+        }
+        return Array;
+    }
 
 
  /**
@@ -51,3 +103,25 @@
  * If your param is [1,2,3,4,5] the result should be
  * [2,1,4,3,6]
  */
+
+// const param = [34, 12, 64, 1, 5, 2, 8];
+// [33, 11, 63, 2, 6, 1, 7]
+
+function evenOddTransform(param){
+
+    const Array = [];
+
+for (const element of param) {
+    if (element % 2 !== 0 && Number.isInteger(element)) {
+        const newelement = element+1;
+        Array.push(newelement);
+    }
+    else if (element % 2 == 0 && Number.isInteger(element)) {
+        const newelement = element-1;
+        Array.push(newelement);
+    } 
+}
+
+return Array;
+
+}

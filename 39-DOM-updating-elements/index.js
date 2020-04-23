@@ -9,10 +9,12 @@
  * and displays it in the h1
  */
 
-function setTitle(string) {
-const headerone = document.querySelector("h1");
-headerone.innerText = string;
+
+setTitle = string => {
+    const headerone = document.querySelector("h1");
+    headerone.innerText = string;
 };
+
 
 /**
  * Exercise 2
@@ -20,9 +22,10 @@ headerone.innerText = string;
  * and appends it to existing h1 text
  */
 
- function appendToTitle(string) {
-     const appT = document.querySelector("h1").innerText += string;
- }
+
+ appendToTitle = string => {
+    const appT = document.querySelector("h1").innerText += string;
+ };
 
 /**
  * Exercise 3
@@ -30,23 +33,41 @@ headerone.innerText = string;
  * and prepends it to existing h1 element text
  */
 
+prependToTitle = string => {
 
+    const h1 = document.querySelector("h1");
+    h1.innerText = string + h1.innerText;
+}
 
 
 /**
  * Exercise 4
  * create a function {setInnerHTMLForDiv} which takes a tag name and text as
  * arguments and uses innerHTML to create an element inside the div, and the
- * text is displayed inside that element. The element should the tag name
+ * text is displayed inside that element. The element should be the tag name
  * passed into the function
  */
 
+setInnerHTMLForDiv = (tagName, text) => {
+    const div = document.querySelector("div");
+    div.innerHTML = `<${tagName}>${text}</${tagName}>`;
+};
 
 /**
  * Exercise 5
  * create a function {addPtoDivWithText} which takes a string as an argument
  * and uses innerHTML to add a p tag containing the text into the div
  */
+
+pushPtoDivWithText = string => {
+
+    const div = document.querySelector("div");
+    const newP = document.createElement("p");
+
+    newP.innerHTML = string;
+    div.append(newP);
+}
+
 
 /**
  * Exercise 6
@@ -55,6 +76,15 @@ headerone.innerText = string;
  * as arguments and set it as a src and alt attributes values
  * for existing img
  */
+
+setSrcToImage = (url, imagedesc) => {
+
+    const img = document.querySelector("img");
+
+    img.src = url;
+    img.alt = imagedesc;
+
+};
 
 /**
  * Exercise 7
@@ -67,6 +97,14 @@ headerone.innerText = string;
  * Also add an attribute that opens your page in a new tab
  */
 
+ setCodersInHoodsLink = (url, text) => {
+ 
+    const a = document.querySelector("a");
+    a.href = url;
+    a.innerText = text;
+    a.target = "_blank";
+ }
+
 /**
  * Exercise 8
  *
@@ -74,13 +112,27 @@ headerone.innerText = string;
  * with class "reset"
  */
 
-/**
+disableResetBtn = () => {
+    const ResetBtn = document.querySelector(".reset");
+    ResetBtn.disabled = true;
+}
+
+
+ /**
  * Exercise 9
  *
  * create a function {disableBtns} which takes class name as an argument
  * and disable all buttons with this class name
  */
 
+ 
+ disableBtns = classname => {
+     const dButtons = document.querySelectorAll(`.${classname}`);
+     dButtons.forEach(button => {
+     button.disabled = true;    
+     });
+ }
+ 
 /**
  * Exercise 10
  *
@@ -92,12 +144,37 @@ headerone.innerText = string;
  * you will see a difference
  */
 
+addClassToLi = () => {
+
+    const li = document.querySelectorAll(".list > .list_item");
+
+    for (let i = 0; i < li.length; i++) {
+        li[i].setAttribute("class", "list_item_" + i);
+        
+    } 
+}
+
+
 /**
  * Exercise 11
  *
  *  create a function {removeListItemClass} which removes the class
  * "list_item" from all li elements with this class
  */
+
+
+ removeListItemClass = () => {
+    const allLis = document.querySelectorAll("li");
+    
+    allLis.forEach((li) => {
+
+        if (li.classList.contains("list_item")) {
+            li.classList.remove("list_item");
+        }
+
+    })
+} 
+
 
 /**
  * Exercise 12
@@ -106,6 +183,14 @@ headerone.innerText = string;
  * a CSS selector. Use to selector to find an element, then add
  * the id to the element
  */
+
+ const addId = (id, selector) => {
+    const selected = document.querySelectorAll(selector);
+    
+    selected.forEach((element) => {
+        element.id = id
+    });
+ }
 
 /**
  * Exercise 13
@@ -118,3 +203,12 @@ headerone.innerText = string;
  * use the selector to find all the elements which match, then
  * set the CSS property to the value
  */
+
+ setStyles = (propertyName, propertyValue, selector) => {
+
+    const selected = document.querySelectorAll(selector);
+
+    selected.forEach(element => {
+        element.style[propertyName] = propertyValue;
+    })
+ }

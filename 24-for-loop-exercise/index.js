@@ -9,6 +9,13 @@ const visitors = ["Alex", "Mike", "Sam", "Lisa", "Gemma"]; // Add at least 5 nam
  * console.log "Hi {name}, my name is {myName}!"
  */
 
+ function greetVisitors () {
+     for (let i = 0; i < visitors.length; i++) {
+         const element = visitors[i];
+         console.log(`Hi $name, my name is $myName`)
+         
+     }
+ }
 
 
 // ========================
@@ -23,6 +30,16 @@ const numbers = [2, 123, 13, 1, 6, 84, 23, 12, 45]; // DON'T TOUCH THIS LINE :)
 
 // ========================
 
+function getElementIndex(item) {
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] === item) {
+            return i;
+        } 
+        
+    }
+    return "Item not found"
+}
+
 
 /**
  * Exercise 3
@@ -30,10 +47,20 @@ const numbers = [2, 123, 13, 1, 6, 84, 23, 12, 45]; // DON'T TOUCH THIS LINE :)
  * from {numbers} array
  */
 
+function total() {
+    let sum = 0;
+
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    return sum;
+}
+
+
+
 // ========================
 
 const numbersForIndexes = [6, 2, 16, 23, 84, 21, 9, 3]; // DON'T TOUCH THIS LINE :)
-
 
 
 /**
@@ -41,6 +68,17 @@ const numbersForIndexes = [6, 2, 16, 23, 84, 21, 9, 3]; // DON'T TOUCH THIS LINE
  * Create a function {addIndex} that takes {numbersForIndexes} array,
  * and returns a new array which includes each number + it's index
  */
+
+
+function addIndex() {
+    
+    const NewArr = [];
+
+    for (let i = 0; i < numbersForIndexes.length; i++) {
+        NewArr.push (i + numbersForIndexes[i]);
+    }
+        return NewArr;
+}
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -51,3 +89,15 @@ const numbersForIndexes = [6, 2, 16, 23, 84, 21, 9, 3]; // DON'T TOUCH THIS LINE
  *  create function {lowestNumber} which will return the lowest integer
  * from {forLowestNumber}
  */
+
+ function lowestNumber(){
+    let min = forLowestNumber[0];
+
+    for (let i = 0; i < forLowestNumber.length; i++) {
+        if (forLowestNumber[i] < min) {
+            min = forLowestNumber[i];
+            return min;
+        }
+        
+    }
+ }
