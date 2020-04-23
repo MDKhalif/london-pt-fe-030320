@@ -59,7 +59,7 @@ const errorMessageEl = document.querySelector(".message.error");
 messageEl.style.display = "none";
 errorMessageEl.style.display = "block";
 ```
-
+ 
 Now the error message with be displaying and the standard message will be hidden.
 
 ## disabled

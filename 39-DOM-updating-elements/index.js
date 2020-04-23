@@ -9,17 +9,29 @@
  * and displays it in the h1
  */
 
+function setTitle(string) {
+const headerone = document.querySelector("h1");
+headerone.innerText = string;
+};
+
 /**
  * Exercise 2
  * create a function {appendToTitle} which takes a string as an argument
  * and appends it to existing h1 text
  */
 
+ function appendToTitle(string) {
+     const appT = document.querySelector("h1").innerText += string;
+ }
+
 /**
  * Exercise 3
  * create a function {prependToTitle} which takes a string as an argument
  * and prepends it to existing h1 element text
  */
+
+
+
 
 /**
  * Exercise 4
@@ -28,6 +40,7 @@
  * text is displayed inside that element. The element should the tag name
  * passed into the function
  */
+
 
 /**
  * Exercise 5
